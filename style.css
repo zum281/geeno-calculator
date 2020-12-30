@@ -1,0 +1,21 @@
+* {
+    margin: none;
+    padding: none;
+    box-sizing: border-box;
+}
+
+#geeno-app,
+#bmi-app,
+#app-error-alert,
+#app-using-stored-values-alert,
+#bmi-app-results,
+#bmr-app,
+#bmr-app-results,
+#bmr-app-tee-result-div,
+#calculate-tee-div {
+    display: none;
+}
+
+.input-legend-title {
+    font-size: 2.5rem;
+}
