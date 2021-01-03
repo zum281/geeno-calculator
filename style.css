@@ -4,15 +4,24 @@
     box-sizing: border-box;
 }
 
-#geeno-app,
-#bmi-app,
+#overview-tab,
 #app-error-alert,
 #app-using-stored-values-alert,
 #bmi-app-results,
 #bmr-app,
 #bmr-app-results,
 #bmr-app-tee-result-div,
-#calculate-tee-div {
+#calculate-tee-div,
+#weight-objective-app,
+#weight-obj-results,
+#overview-content,
+#overview-age,
+#overview-height,
+#overview-weight,
+#overview-bmi,
+#overview-bmr,
+#overview-tee,
+#overview-title {
     display: none;
 }
 
