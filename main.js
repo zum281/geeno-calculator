@@ -264,7 +264,7 @@ $(document).ready(function () {
             if ($("#calculate-tee-checkbox").is(":checked")) {
                 if (
                     $("#bmr-laf-input").val() !== "" &&
-                    sessionStorage.getItem(h)
+                    sessionStorage.getItem(laf)
                 ) {
                     laf = sessionStorage.getItem(laf);
                     $("#using-stored-values-message").append(
@@ -278,7 +278,7 @@ $(document).ready(function () {
                 }
                 if (laf !== "") {
                     tee = get_tee(bmr, laf);
-                    sessionStorage.setItem(tee);
+                    sessionStorage.setItem(tee, tee);
                     $("#bmr-app-tee-result").html(tee + " kcal");
                     $("#bmr-app-tee-result-div").show();
                 } else {
