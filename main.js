@@ -414,12 +414,12 @@ function get_bmi(w, h) {
 }
 
 function get_bmi_range(bmi) {
-    if (bmi < 18.5) return "Underweight";
-    else if (bmi < 25) return "Normal (healthy weight)";
-    else if (bmi < 30) return "Overweight";
-    else if (bmi < 35) return "Obese Class I (Moderately obese)";
-    else if (bmi < 40) return "Obese Class II (Severely obese) ";
-    else return "Obese Class III (Very severely obese)";
+    if (bmi < 18.5) return "Sottopeso";
+    else if (bmi < 25) return "Normopeso";
+    else if (bmi < 30) return "Sovrappeso";
+    else if (bmi < 35) return "Obesità Classe I";
+    else if (bmi < 40) return "Obesità Classe II";
+    else return "Obesità Classe III";
 }
 
 function get_bmr(age, sex, w, h) {
