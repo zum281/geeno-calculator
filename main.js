@@ -53,7 +53,6 @@ $(document).ready(function () {
         bmi_app_div.hide();
         bmr_app_div.hide();
         weight_obj_div.hide();
-        $("#app-using-stored-values-alert").hide();
         $("#app-error-alert").hide();
         if (sessionStorage.getItem(age)) {
             $("#overview-age").show();
@@ -127,7 +126,7 @@ $(document).ready(function () {
         bmi_app_div.show();
         bmr_app_div.hide();
         weight_obj_div.hide();
-        $("#app-using-stored-values-alert").hide();
+
         $("#app-error-alert").hide();
         $("#overview-tab").removeClass("d-flex");
         $("#overview-content").hide();
@@ -149,7 +148,7 @@ $(document).ready(function () {
         bmi_app_div.hide();
         bmr_app_div.show();
         weight_obj_div.hide();
-        $("#app-using-stored-values-alert").hide();
+
         $("#app-error-alert").hide();
         $("#overview-tab").removeClass("d-flex");
         $("#overview-content").hide();
@@ -171,7 +170,6 @@ $(document).ready(function () {
         bmi_app_div.hide();
         bmr_app_div.hide();
         weight_obj_div.show();
-        $("#app-using-stored-values-alert").hide();
         $("#app-error-alert").hide();
         $("#overview-tab").removeClass("d-flex");
         $("#overview-content").hide();
