@@ -44,6 +44,9 @@ $(document).ready(function () {
 
     // Show page on button click -- SELECT APP
     show_overview_tab_btn.click(function () {
+        if (window.outerWidth < 425) {
+            $("#wrapper").removeClass("toggled");
+        }
         $("#overview-content").show();
         $("#overview-tab").addClass("d-flex");
         overview_tab_div.show();
@@ -117,6 +120,9 @@ $(document).ready(function () {
     });
 
     show_bmi_app_btn.click(function () {
+        if (window.outerWidth < 425) {
+            $("#wrapper").removeClass("toggled");
+        }
         overview_tab_div.hide();
         bmi_app_div.show();
         bmr_app_div.hide();
@@ -125,9 +131,20 @@ $(document).ready(function () {
         $("#app-error-alert").hide();
         $("#overview-tab").removeClass("d-flex");
         $("#overview-content").hide();
+
+        // populate input if needed
+        if (sessionStorage.getItem(w)) {
+            $("#bmi-weight-input").val(sessionStorage.getItem(w));
+        }
+        if (sessionStorage.getItem(h)) {
+            $("#bmi-height-input").val(sessionStorage.getItem(h));
+        }
     });
 
     show_bmr_app_btn.click(function () {
+        if (window.outerWidth < 425) {
+            $("#wrapper").removeClass("toggled");
+        }
         overview_tab_div.hide();
         bmi_app_div.hide();
         bmr_app_div.show();
@@ -136,9 +153,20 @@ $(document).ready(function () {
         $("#app-error-alert").hide();
         $("#overview-tab").removeClass("d-flex");
         $("#overview-content").hide();
+
+        // populate input if needed
+        if (sessionStorage.getItem(w)) {
+            $("#bmr-weight-input").val(sessionStorage.getItem(w));
+        }
+        if (sessionStorage.getItem(h)) {
+            $("#bmr-height-input").val(sessionStorage.getItem(h));
+        }
     });
 
     show_weight_obj_btn.click(function () {
+        if (window.outerWidth < 425) {
+            $("#wrapper").removeClass("toggled");
+        }
         overview_tab_div.hide();
         bmi_app_div.hide();
         bmr_app_div.hide();
@@ -147,6 +175,18 @@ $(document).ready(function () {
         $("#app-error-alert").hide();
         $("#overview-tab").removeClass("d-flex");
         $("#overview-content").hide();
+
+        // populate input if needed
+        if (sessionStorage.getItem(w)) {
+            $("#weight-obj-weight-input").val(sessionStorage.getItem(w));
+        }
+        if (sessionStorage.getItem(h)) {
+            $("#weight-obj-height-input").val(sessionStorage.getItem(h));
+        }
+
+        if (sessionStorage.getItem(bmr)) {
+            $("#weight-obj-bmr-input").val(sessionStorage.getItem(bmr));
+        }
     });
     // BMI APP
     bmi_app_clear_btn.click(function () {
@@ -158,36 +198,22 @@ $(document).ready(function () {
 
     bmi_app_result_btn.click(function (e) {
         e.preventDefault();
-        $("#using-stored-values-message").html("");
-        if ($("#bmi-weight-input").val() === "" && sessionStorage.getItem(w)) {
-            w = sessionStorage.getItem(w);
+        w = $("#bmi-weight-input").val();
 
-            $("#using-stored-values-message").append("Peso: " + w + "kg<br>");
-            $("#app-using-stored-values-alert").show();
-        } else {
-            w = $("#bmi-weight-input").val();
+        if (w !== sessionStorage.getItem(w)) {
             if (sessionStorage.getItem(bmr)) sessionStorage.removeItem(bmr);
             if (sessionStorage.getItem(laf)) sessionStorage.removeItem(laf);
             if (sessionStorage.getItem(age)) sessionStorage.removeItem(age);
             if (sessionStorage.getItem(tee)) sessionStorage.removeItem(tee);
             sessionStorage.setItem(w, w);
-            $("#app-using-stored-values-alert").hide();
         }
-        if ($("#bmi-height-input").val() === "" && sessionStorage.getItem(h)) {
-            h = sessionStorage.getItem(h);
-
-            $("#using-stored-values-message").append(
-                "Altezza: " + h + "cm<br>"
-            );
-            $("#app-using-stored-values-alert").show();
-        } else {
-            h = $("#bmi-height-input").val();
+        h = $("#bmi-height-input").val();
+        if (h !== sessionStorage.getItem(h)) {
             if (sessionStorage.getItem(bmr)) sessionStorage.removeItem(bmr);
             if (sessionStorage.getItem(laf)) sessionStorage.removeItem(laf);
             if (sessionStorage.getItem(age)) sessionStorage.removeItem(age);
             if (sessionStorage.getItem(tee)) sessionStorage.removeItem(tee);
             sessionStorage.setItem(h, h);
-            $("#app-using-stored-values-alert").hide();
         }
 
         if (w !== "" && h !== "") {
@@ -223,31 +249,15 @@ $(document).ready(function () {
 
     bmr_app_result_btn.click(function (e) {
         e.preventDefault();
-
-        $("#using-stored-values-message").html("");
-        if ($("#bmr-weight-input").val() === "" && sessionStorage.getItem(w)) {
-            w = sessionStorage.getItem(w);
-
-            $("#using-stored-values-message").append("Peso: " + w + "kg<br>");
-            $("#app-using-stored-values-alert").show();
-        } else {
-            w = $("#bmr-weight-input").val();
+        w = $("#bmr-weight-input").val();
+        if (w !== sessionStorage.getItem(w)) {
             if (sessionStorage.getItem(bmi)) sessionStorage.removeItem(bmi);
             sessionStorage.setItem(w, w);
-            $("#app-using-stored-values-alert").hide();
         }
-        if ($("#bmr-height-input").val() === "" && sessionStorage.getItem(h)) {
-            h = sessionStorage.getItem(h);
-
-            $("#using-stored-values-message").append(
-                "Altezza: " + h + "cm<br>"
-            );
-            $("#app-using-stored-values-alert").show();
-        } else {
-            h = $("#bmr-height-input").val();
+        h = $("#bmr-height-input").val();
+        if (h !== sessionStorage.getItem(h)) {
             if (sessionStorage.getItem(bmi)) sessionStorage.removeItem(bmi);
             sessionStorage.setItem(h, h);
-            $("#app-using-stored-values-alert").hide();
         }
 
         sex = $("#bmr-sex-input").val();
@@ -262,19 +272,9 @@ $(document).ready(function () {
             sessionStorage.setItem(age, age);
             sessionStorage.setItem(bmr, bmr);
             if ($("#calculate-tee-checkbox").is(":checked")) {
-                if (
-                    $("#bmr-laf-input").val() !== "" &&
-                    sessionStorage.getItem(laf)
-                ) {
-                    laf = sessionStorage.getItem(laf);
-                    $("#using-stored-values-message").append(
-                        "LAF: " + laf + "<br>"
-                    );
-                    $("#app-using-stored-values-alert").show();
-                } else {
-                    laf = $("#bmr-laf-input").val();
+                laf = $("#bmr-laf-input").val();
+                if (laf !== sessionStorage.getItem(laf)) {
                     sessionStorage.setItem(laf, laf);
-                    $("#app-using-stored-values-alert").hide();
                 }
                 if (laf !== "") {
                     tee = get_tee(bmr, laf);
@@ -318,65 +318,34 @@ $(document).ready(function () {
 
     // WEIGHT OBJ APP
     weight_obj_clear_btn.click(function () {
-        $("#using-stored-values-message").html("");
         weight_obj_results_div.hide();
         bmi_app_results_div.hide();
         $("#app-error-alert").hide();
     });
     weight_obj_result_btn.click(function (e) {
         e.preventDefault();
-        $("#using-stored-values-message").html("");
-        if (
-            $("#weight-obj-weight-input").val() === "" &&
-            sessionStorage.getItem(w)
-        ) {
-            w = sessionStorage.getItem(w);
-            $("#using-stored-values-message").append("Peso: " + w + "kg<br>");
-            $("#app-using-stored-values-alert").show();
-        } else {
-            w = $("#weight-obj-weight-input").val();
+        w = $("#weight-obj-weight-input").val();
+        if (w !== sessionStorage.getItem(w)) {
+            if (sessionStorage.getItem(bmi)) sessionStorage.removeItem(bmi);
+            if (sessionStorage.getItem(bmr)) sessionStorage.removeItem(bmr);
             sessionStorage.setItem(w, w);
-            $("#app-using-stored-values-alert").hide();
         }
-        if (
-            $("#weight-obj-height-input").val() === "" &&
-            sessionStorage.getItem(h)
-        ) {
-            h = sessionStorage.getItem(h);
-            $("#using-stored-values-message").append(
-                "Altezza: " + h + "cm<br>"
-            );
-            $("#app-using-stored-values-alert").show();
-        } else {
-            h = $("#weight-obj-height-input").val();
+
+        h = $("#weight-obj-height-input").val();
+        if (h !== sessionStorage.getItem(h)) {
+            if (sessionStorage.getItem(bmi)) sessionStorage.removeItem(bmi);
+            if (sessionStorage.getItem(bmr)) sessionStorage.removeItem(bmr);
             sessionStorage.setItem(h, h);
-            $("#app-using-stored-values-alert").hide();
         }
-        if (
-            $("#weight-obj-laf-input").val() === "" &&
-            sessionStorage.getItem(laf)
-        ) {
-            laf = sessionStorage.getItem(laf);
-            $("#using-stored-values-message").append("LAF: " + laf + "<br>");
-            $("#app-using-stored-values-alert").show();
-        } else {
-            laf = $("#weight-obj-laf-input").val();
+
+        laf = $("#weight-obj-laf-input").val();
+        if (laf !== sessionStorage.getItem(laf)) {
             sessionStorage.setItem(laf, laf);
-            $("#app-using-stored-values-alert").hide();
         }
-        if (
-            $("#weight-obj-bmr-input").val() === "" &&
-            sessionStorage.getItem(bmr)
-        ) {
-            bmr = sessionStorage.getItem(bmr);
-            $("#using-stored-values-message").append(
-                "Metabolismo basale (MB): " + bmr + " kcal<br>"
-            );
-            $("#app-using-stored-values-alert").show();
-        } else {
-            bmr = $("#weight-obj-bmr-input").val();
+
+        bmr = $("#weight-obj-bmr-input").val();
+        if (bmr !== sessionStorage.getItem(bmr)) {
             sessionStorage.setItem(bmr, bmr);
-            $("#app-using-stored-values-alert").hide();
         }
         if (
             h !== "" &&
@@ -408,13 +377,13 @@ $(document).ready(function () {
 
             $("#app-error-alert").hide();
 
-            $("#weight-obj-desired-bmi-result").append(
+            $("#weight-obj-desired-bmi-result").html(
                 desired_bmi + " kg/m<sup>2</sup><br>"
             );
-            $("#weight-obj-desired-weight-result").append(
+            $("#weight-obj-desired-weight-result").html(
                 desired_weight + " kg<br>"
             );
-            $("#weight-obj-weight-obj-result").append(weight_obj + " kcal<br>");
+            $("#weight-obj-weight-obj-result").html(weight_obj + " kcal<br>");
 
             weight_obj_results_div.show();
         } else {

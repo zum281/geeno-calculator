@@ -39,7 +39,9 @@
             <div id="page-content-wrapper">
 
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom px-4">
-                    <button class="btn btn-primary" id="menu-toggle">Menu</button>
+                    <button class="navbar-toggler" id="menu-toggle" aria-controls="sidebar-wrapper"
+                        aria-expanded="false" aria-label="Toggle navigation"><span
+                            class="navbar-toggler-icon"></span></button>
                 </nav>
                 <!--Invalid input alert-->
                 <div class="alert alert-danger alert-dismissible fade show" role="alert" id="app-error-alert">
@@ -109,7 +111,8 @@
                                         class="form-control form-control-lg" required autocomplete="off">
                                 </div>
                             </div>
-                            <div class="row mt-5 justify-content-center px-3" id="bmi-app-btns">
+                            <div class="d-flex flex-column-reverse flex-lg-row mt-5 justify-content-center px-3"
+                                id="bmi-app-btns">
                                 <input type="reset" class="btn btn-secondary btn-lg col-lg-2 mx-4 mt-3"
                                     id="bmi-app-clear-btn" value="Clear">
                                 <input type="submit" class="btn btn-primary btn-lg col-lg-2 mx-4 mt-3"
@@ -166,7 +169,8 @@
                                 <input type="number" name="laf" id="bmr-laf-input" class="form-control" step="0.1"
                                     autocomplete="off">
                             </div>
-                            <div class="row mt-5 justify-content-center px-3" id="bmr-app-btns">
+                            <div class="row mt-5 justify-content-center px-3 d-flex flex-column-reverse flex-lg-row"
+                                id="bmr-app-btns">
                                 <input type="reset" class="btn btn-secondary btn-lg col-lg-2 mx-4 mt-3"
                                     id="bmr-app-clear-btn" value="Clear">
                                 <input type="submit" class="btn btn-primary btn-lg col-lg-2 mx-4 mt-3"
@@ -239,7 +243,8 @@
                             <input type="number" name="time-range" id="weight-obj-time-range" class="form-control"
                                 autocomplete="off">
 
-                            <div class="row mt-5 justify-content-center px-3" id="weight-obj-app-btns">
+                            <div class="row mt-5 justify-content-center px-3 d-flex flex-column-reverse flex-lg-row"
+                                id="weight-obj-app-btns">
                                 <input type="reset" class="btn btn-secondary btn-lg col-lg-2 mx-4 mt-3"
                                     id="weight-obj-clear-btn" value="Clear">
                                 <input type="submit" class="btn btn-primary btn-lg col-lg-2 mx-4 mt-3"
