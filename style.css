@@ -28,3 +28,9 @@
 .input-legend-title {
     font-size: 2.5rem;
 }
+
+@media (min-width: 801px) {
+    #main-navbar {
+        display: none;
+    }
+}
