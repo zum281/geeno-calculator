@@ -7,10 +7,6 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
-    background-color: #f7f7f7;
-}
-
 #overview-tab,
 #app-error-alert,
 #app-using-stored-values-alert,
@@ -59,8 +55,8 @@ body {
 .card-body {
     display: grid;
     place-items: center;
-    border-radius: 18px;
-    height: 10vh;
+    border-radius: 14px;
+    height: 15vh;
     margin: 1rem;
 }
 
