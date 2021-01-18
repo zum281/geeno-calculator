@@ -1,0 +1,25 @@
+{
+    "name": "geeno-calculator",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "build-css": "tailwindcss build src/style.css -o public/css/style.css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zum281/geeno-calculator.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/zum281/geeno-calculator/issues"
+    },
+    "homepage": "https://github.com/zum281/geeno-calculator#readme",
+    "dependencies": {
+        "@tailwindcss/forms": "^0.2.1",
+        "autoprefixer": "^10.2.1",
+        "postcss": "^8.2.4",
+        "tailwindcss": "^2.0.2"
+    }
+}
