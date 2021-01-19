@@ -133,7 +133,7 @@ $(document).ready(function () {
         if (sessionStorage.getItem(weight_obj)) {
             $("#overview-weight-obj").show();
             $("#overview-weight-obj-span").html(
-                sessionStorage.getItem(weight_obj) + " ??"
+                sessionStorage.getItem(weight_obj) + " kcal"
             );
             $("#no-results-div").hide();
         } else {

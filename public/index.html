@@ -96,46 +96,61 @@
                     </div>
 
                     <h1 id="overview-title" class="hidden my-4 text-6xl text-center">I tuoi risultati</h1>
-                    <div id="overview-content" class="grid grid-rows-3 gap-4 px-10 py-4 divide-y-2">
-                        <div class="flex flex-col items-center space-y-4 md:flex-row md:space-x-4">
-                            <div class="card overview-element" id="overview-age">
-                                <h4 class="my-3 text-lg font-semibold">Età</h4>
-                                <p class="py-3 overview-span" id="overview-age-span"></p>
+                    <div id="overview-content" class="grid grid-cols-2 gap-4 px-10 py-4">
+                        <div class="grid grid-rows-3 gap-4 px-10 py-4 divide-y-2">
+                            <div class="flex flex-col items-center space-y-4 md:flex-row md:space-x-4">
+                                <div class="card overview-element" id="overview-age">
+                                    <h4 class="my-3 text-lg font-semibold">Età</h4>
+                                    <p class="py-3 overview-span" id="overview-age-span"></p>
+                                </div>
+                                <div class="card overview-element" id="overview-height">
+                                    <h4 class="my-3 text-lg font-semibold">Altezza</h4>
+                                    <p class="py-3 overview-span" id="overview-height-span"></p>
+                                </div>
+                                <div class="card overview-element" id="overview-weight">
+                                    <h4 class="my-3 text-lg font-semibold">Peso</h4>
+                                    <p class="py-3 overview-span" id="overview-weight-span"></p>
+                                </div>
                             </div>
-                            <div class="card overview-element" id="overview-height">
-                                <h4 class="my-3 text-lg font-semibold">Altezza</h4>
-                                <p class="py-3 overview-span" id="overview-height-span"></p>
+                            <div class="flex flex-col items-center space-y-4 md:flex-row md:space-x-4">
+                                <div class="card overview-element" id="overview-bmi">
+                                    <h4 class="my-3 text-lg font-semibold">BMI</h4>
+                                    <p class="py-3 overview-span" id="overview-bmi-span"></p>
+                                </div>
+                                <div class="card overview-element" id="overview-bmi-range">
+                                    <h4 class="my-3 text-lg font-semibold">Fascia di BMI</h4>
+                                    <p class="py-3 overview-span" id="overview-bmi-range-span"></p>
+                                </div>
                             </div>
-                            <div class="card overview-element" id="overview-weight">
-                                <h4 class="my-3 text-lg font-semibold">Peso</h4>
-                                <p class="py-3 overview-span" id="overview-weight-span"></p>
+                            <div class="flex flex-col items-center space-y-4 md:flex-row md:space-x-4">
+                                <div class="card overview-element" id="overview-bmr">
+                                    <h4 class="my-3 text-lg font-semibold">Metabolismo basale (MB)</h4>
+                                    <p class="py-3 overview-span" id="overview-bmr-span"></p>
+                                </div>
+                                <div class="card overview-element" id="overview-tee">
+                                    <h4 class="my-3 text-lg font-semibold">Dispendio energetico totale (DET)</h4>
+                                    <p class="py-3 overview-span" id="overview-tee-span"></p>
+                                </div>
                             </div>
-
                         </div>
-                        <div class="flex flex-col items-center space-y-4 md:flex-row md:space-x-4">
-                            <div class="card overview-element" id="overview-bmi">
-                                <h4 class="my-3 text-lg font-semibold">BMI</h4>
-                                <p class="py-3 overview-span" id="overview-bmi-span"></p>
-                            </div>
-
-                            <div class="card overview-element" id="overview-bmi-range">
-                                <h4 class="my-3 text-lg font-semibold">Fascia di BMI</h4>
-                                <p class="py-3 overview-span" id="overview-bmi-range-span"></p>
-                            </div>
-                        </div>
-
-
-                        <div class="flex flex-col items-center space-y-4 md:flex-row md:space-x-4">
-                            <div class="card overview-element" id="overview-bmr">
-                                <h4 class="my-3 text-lg font-semibold">Metabolismo basale (MB)</h4>
-                                <p class="py-3 overview-span" id="overview-bmr-span"></p>
-                            </div>
-                            <div class="card overview-element" id="overview-tee">
-                                <h4 class="my-3 text-lg font-semibold">Dispendio energetico totale (DET)</h4>
-                                <p class="py-3 overview-span" id="overview-tee-span"></p>
+                        <div class="flex items-center justify-center">
+                            <div class="flex flex-col items-center space-y-4 md:flex-row md:space-x-4">
+                                <div class="card overview-element" id="overview-desired-bmi">
+                                    <h4 class="my-3 text-lg font-semibold">BMI desiderato</h4>
+                                    <p class="py-3 overview-span" id="overview-desired-bmi-span"></p>
+                                </div>
+                                <div class="card overview-element" id="overview-desired-weight">
+                                    <h4 class="my-3 text-lg font-semibold">Peso desiderato</h4>
+                                    <p class="py-3 overview-span" id="overview-desired-weight-span"></p>
+                                </div>
+                                <div class="card overview-element" id="overview-weight-obj">
+                                    <h4 class="my-3 text-lg font-semibold">Fabbisogno energetico</h4>
+                                    <p class="py-3 overview-span" id="overview-weight-obj-span"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
+
 
 
                 </div>
