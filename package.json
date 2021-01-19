@@ -4,7 +4,7 @@
     "description": "",
     "main": "main.js",
     "scripts": {
-        "build-css": "postcss src/style.css -o public/css/style.css"
+        "build-css": "tailwindcss build src/style.css -o public/css/style.css"
     },
     "repository": {
         "type": "git",
